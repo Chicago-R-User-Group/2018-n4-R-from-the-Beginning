@@ -1,0 +1,316 @@
+---
+title: "Getting Data into R"
+author: "Adam Ginensky"
+date: "April 13, 2018"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+
+* POLICY ON QUESTIONS
+* Feel free to interrupt with questions.
+* If I ignore you, throw something, not heavy, at me.
+
+---
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Introduction 
+
+* The purpose of this talk is to answer the following question- * How the **xx??!!!! do I get my data into R* 
+* We will focus on excel.
+* This is down and dirty.
+* What is good in this presentation is due to Paul Teetor, what is new in the presentation is mine.
+* "What is good in this book is not new and what is new in this book is not good" A. Weil 
+
+---
+
+* One can do a lot better than this presentation in terms of data importing, but that's a story for another day.  
+* We have also only very briefly touched the surface of what you can do with your data !
+* The very basic stuff here may be more useful than you think.  
+* I've seen a million presentations start with " I got my data from spot X and imported it into R"
+
+---
+
+<br>
+<br>
+<br>
+
+* The first thing to know is that you want your data to be a .csv file, not an .xlsx file.
+* This isn't hard- just open your excel work book and go to the sheet you want to use and use file/save and tell excell you want  to .save it as a .csv file.
+* Excel will complain. Say that you are destroying unicorns and rainbows, but do it anyway.
+* Remember only the active sheet will be saved !!!
+* Yes, of course you can import a whole excel workbook into R without doing any of this, but that involves installing and loading packages and all sorts of other things that are inconsistent with the principle of "I just want to load my **xx??!!!! data, not write a book"
+
+---
+
+* So how do I import data ? Here it is.
+* First I will actually create the .csv file,
+* So a break from this presentation to do that.
+* I have an excel file on my desktop and I'll turn it into a .csv file. 
+* ADAM DON'T FORGET TO DO THIS (NOTE TO SELF)
+
+---
+
+<br>
+<br>
+<br>
+
+* I'm just going to do it and then explain what I did.
+
+```{r}
+bb = read.csv("C:/Users/agine/Desktop/bb.csv",stringsAsFactors = F,  sep = ",")
+
+       
+
+```
+
+* read.csv is the function for importing data into R.
+* R, like everyone else except windows use '/', NOT '\'  !!
+* This particularly important if you are using 'cut and paste' to get the file name and locations.
+* This file was on the desktop.  I put it there because most of you have a similar file path.
+* All you need to change is agine to whatever you are called on your machine.
+* Again don't forget to change windows "/" to '\'
+
+---
+
+* Lot's of times you will have a project in a file and you can place your data there.
+* That's advantageous because if data is in the current directory you don't need anything except the file name.
+* So if the data is in the directory R is using, you don't need a file path
+* I put a copy of the file in the working directory, so 
+
+```{r}
+bb2 = read.csv('bb.csv',stringsAsFactors = F,  sep = ",")
+identical(bb,bb2)
+```
+
+
+
+
+---
+
+### What about the other inputs to the function
+
+* 'stringsAsFactors = F'
+* factors are a special kind of R data type, again not for today.
+* strings are what we call characters. 
+* If you have non-numeric data like date or zip code you don't want factors.
+* What does sep = "," mean ?
+* While csv stands for comma separated file, various separators including blank space, colon, semi-colon are also used.
+* If you have the wrong separator things will screw up.
+
+---
+
+### Trouble Shooting
+
+```{r}
+see = read.csv('weather_2014.csv')
+head(see) # command to show the first few lines of a file.  
+```
+
+* That doesn't look right.  All the data is shmused into one variable.
+* Let's examine the actual file.
+* We can see that the separator is a semicolon.
+
+---
+
+<br>
+<br>
+<br>
+
+* Let's try again
+
+```{r}
+see = read.csv('weather_2014.csv', sep = ";")
+head(see)
+```
+
+That's better !
+
+## Back to Baseball
+
+* Why use R ?
+* You can do lot's of things easily.
+* I will demonstrate a few basic things you can do.
+* R imports excel sheets(and most anything else) as a data frame.
+* A data frame is like a matrix except, it doesn't require data to be numerical
+* It's like an excel spread sheet except it indexes by row/column like everyone in the world except excel does.
+
+---
+
+* It's easy to get basic statistics from R.
+* You want a summary, you use the summary funtion.
+
+```{r}
+summary(bb)
+```
+
+---
+
+* Notice the numerical columns have numbers, whereas the character columns don't.
+* NA means there is no data. (not available)
+* NA must be dealt with to do arithmetic because anything +/-/* NA = NA
+
+---
+
+<br>
+<br>
+<br>
+
+* R allows you to pick out data by column number or column name.
+* R uses the notation [row,column]
+* R uses $ to name a column
+* You can then do statistics.
+```{r}
+identical(bb[,2],bb$AtBat)
+```
+
+```{r}
+mean(bb$Salary) # mean salary
+sd(bb$Salary)  # standard deviation of salary
+```
+
+---
+
+* What happened ??
+* Missing data as we can see from the summary.
+* Missing data, no worries !!
+* Notice that summary() took care of the missing values for you.
+
+```{r}
+mean(bb$Salary,na.rm = T) # remove NA is true
+sd(bb$Salary,na.rm = T)
+```
+
+---
+
+## Regressions in R
+
+* R makes it very easy and quick to run regressions.
+* The function is called lm (linear model)
+* Btw, if you ever want information about a function, just type ?fnName at the Console.
+* To run a regression, tell it what the dependent variable is, what the independent variables are, and where the data comes from.
+
+```{r}
+lm(Salary~Years+CRBI, data = bb)
+```
+
+---
+
+### Some important points
+
+* You should save your model by giving it a name.
+
+```{r}
+dumbModel = lm(Salary~Years+CRBI, data = bb)
+```
+
+* Now. you have not only saved the information, but you get a lot more information.
+* the function summary works on almost all objects.
+
+---
+
+```{r}
+summary(dumbModel)
+```
+
+---
+
+* Two other points, but this isn't a regression class.
+* You can force 'no constant term by using -1.
+* You can regress against all variables by using ~.
+* ~ means there is a formula and '.' means everything else
+* The syntax would be
+
+```{r}
+lm(Salary~ Years+CRBI-1, data = bb)
+```
+
+---
+
+* The syntax for all the variables is 
+* I'm not going to lie, this won't work on this data set because I haven't cleaned it yet !
+* So please come back for a future lesson on data munging !
+
+```{r}
+ # lm(Salary~. , data = bb)
+
+```
+
+
+---
+
+### Importing a data set from the web 
+
+
+
+```{r}
+wine = read.csv('https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data')
+summary(wine)
+# in case it's not legible in the html
+# wine = read.csv('https://archive.ics.uci.edu/ml/machine-learning-databases/
+# wine/wine.data')
+
+```
+
+---
+
+
+
+```{r}
+booze = lm(X1 ~. , data = wine)
+summary(booze)
+```
+
+
+---
+
+## How do I put my data back into excel ?
+
+* read.csv puts the data into R
+* write.csv puts it back
+* Why would you put it back ?
+
+---
+
+* This is a short lecture.
+* We haven't discussed the things one can do with a data frame including
+* manipulate the data, create new variables (columns)
+* Save the data from your linear model etc
+
+---
+
+
+<br>
+<br>
+<br>
+<br>
+```{r}
+coef = dumbModel$coefficients
+coef
+
+```
+
+* This can now be exported 
+
+```{r}
+write.csv(coef,file = "coef.csv")
+```
+
+
+* Of course excel knows how to open a csv
+
+---
+
+### And Finally
+
+* Thank you for your time !
