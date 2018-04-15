@@ -13,28 +13,32 @@ knitr::opts_chunk$set(echo = FALSE)
 library(CRUGtools)
 ```
 
-# Local R News
+# R News
 
 ## Chicago R User Group {.smaller .columns-2}
 
-We have a new header graphic for our [meetup.com](https://www.meetup.com/ChicagoRUG) page. It clearly indicates the more R meetups one attends, the more proficient one becomes with `R`!
 
-```{r, out.width = "450px", fig.align='left'}
-path1 <- paste0(getwd(), "/images/CRUG_Header.png")
-knitr::include_graphics(path1)
-```
+**Coming Soon: CRUGtools.** An R package containing data and functions to help run the Chicago R User Group.
 
-
-
-**CRUGtools:** An R package containing data and functions to help run the Chicago R User Group.
-
-```{r, out.width = "175px", fig.align='center'}
+```{r, out.width = "200px", fig.align='center'}
 path1 <- paste0(getwd(), "/images/CRUGtools.png")
 knitr::include_graphics(path1)
 ```
 
-Follow us: ![](images/twitter50x41.png) @[ChicagoRusers](https://twitter.com/ChicagoRusers)
+Follow us:
 
+![](images/GitHub-Mark.png) [Chicago-R-User-Group](https://twitter.com/ChicagoRusers)
+
+
+![](images/twitter50x41.png) @[ChicagoRusers](https://twitter.com/ChicagoRusers)
+
+
+Our new header graphic on [meetup.com](https://www.meetup.com/ChicagoRUG) clearly indicates the more R meetups one attends, the more proficient one becomes with `R`! :)
+
+```{r, out.width = "500px", fig.align='left'}
+path1 <- paste0(getwd(), "/images/CRUG_Header.png")
+knitr::include_graphics(path1)
+```
 
 ## R/Finance 2018: June 1st-2nd at UIC {.smaller}
 
@@ -68,25 +72,6 @@ For more information join the meetup and follow on twitter:
 ![](images/twitter50x41.png)@[RLadiesChicago](https://twitter.com/RLadiesChicago)
 
 
-
-# Sponsors of CRUG
-
-## Microsoft Developer Advocates
-
-```{r, out.width = "900px", , fig.align='center'}
-path1 <- paste0(getwd(), "/images/Microsoft-2.png")
-knitr::include_graphics(path1)
-```
-
-## Microsoft Developer Advocates
-
-```{r, out.width = "900px", , fig.align='center'}
-path1 <- paste0(getwd(), "/images/Microsoft-1.png")
-knitr::include_graphics(path1)
-```
-
-
-
 ## R Consortium News {.smaller}
 
 ```{r, out.width = "500px", , fig.align='left'}
@@ -101,6 +86,23 @@ The central mission of the R Consortium is to work with and provide support to t
 Follow the R Consortium
 
 ![](images/twitter50x41.png) @[RConsortium](https://twitter.com/Rconsortium)
+
+
+# Today's meetup and its Sponsor
+
+## Microsoft Developer Advocates
+
+```{r, out.width = "900px", , fig.align='center'}
+path1 <- paste0(getwd(), "/images/Microsoft-2.png")
+knitr::include_graphics(path1)
+```
+
+## Microsoft Developer Advocates
+
+```{r, out.width = "900px", , fig.align='center'}
+path1 <- paste0(getwd(), "/images/Microsoft-1.png")
+knitr::include_graphics(path1)
+```
 
 
 
