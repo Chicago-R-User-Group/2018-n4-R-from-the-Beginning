@@ -8,7 +8,7 @@ We started with some motivations on how and why R was created and its continued 
 
 - Joe Cursio: [**R from the VeRy Beginning - Installation**.pptx page](https://github.com/Chicago-R-User-Group/2018-n4-R-from-the-Beginning/blob/master/Joe-Cursio/R-from-the-VeRy-Beginning--Installation.pptx) (Click `Download` button. 14.2 MB)
 
-- Justin Shea: **R Motivations**. Navigate to the [`Justin-Shea`](https://github.com/Chicago-R-User-Group/2018-n4-R-from-the-Beginning/tree/master/Justin-Shea) and download the .html file to view in your browser. Or, render slides locally in R-markdown.
+- Justin Shea: **R Motivations**. Navigate to the [`Justin-Shea`](https://github.com/Chicago-R-User-Group/2018-n4-R-from-the-Beginning/tree/master/Justin-Shea) folder and download the .html file to view in your browser. Or, render slides locally in R-markdown.
 
 - Joe Cursio: [**R from the VeRy Beginning**.pptx page](https://github.com/Chicago-R-User-Group/2018-n4-R-from-the-Beginning/blob/master/Joe-Cursio/R-from-the-VeRy-Beginning--Introduction.pptx) (Click `Download` button. 31.3 MB)
 
