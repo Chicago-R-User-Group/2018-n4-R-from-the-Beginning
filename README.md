@@ -14,5 +14,4 @@ We started with some motivations on how and why R was created and its continued 
 
 Thanks again to Microsoft Developer Advocates for sponsoring today's meetup! Thanks also to the Stuart School of Business at the Illinois Institute of Technology for providing fully functional class room space.
 
-![Bit](https://github.com/Chicago-R-User-Group/2018-n4-R-from-the-Beginning/blob/master/images/BitDevAdvocate.png=x100)
-
+<img src="https://github.com/Chicago-R-User-Group/2018-n4-R-from-the-Beginning/blob/master/images/BitDevAdvocate.png" height="200" />
