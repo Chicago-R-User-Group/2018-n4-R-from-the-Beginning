@@ -161,7 +161,7 @@ path <- paste0(getwd(), "/images/Error-RR.png")
 knitr::include_graphics(path)
 ```
 
-http://www.eusprig.org/horror-stories.htm
+http://www.eusprig.org/horror-stories.html
 
 ## Good solutions to make spreadsheets safer {.columns-2 .smaller}
 
@@ -258,6 +258,7 @@ knitr::include_graphics(path)
 ```
 
 ## Scripting languages: the core of Data Science
+
 High Level languages like `R` interface with low level languages and Numerical computing libraries. 
 
 They are easier to program so analysts can fail fast on their research and start again. Most research ideas and science fail, so emphasis is placed on how fast one can churn them out.
@@ -301,7 +302,7 @@ _`R` is most visited from universities, where it's a common choice for academic 
 _The industry with the second-highest share of `R` visitors, by a close margin, is healthcare. That probably won't come as a surprise to biostatisticians, since `R` is the tool of choice for many statistical methods necessary for clinical studies and bioinformatics._ (R is mature. [It is used and OK'd by the FDA for drug trials](http://blog.revolutionanalytics.com/2012/06/fda-r-ok.html)
 
 
-_One industry that doesn't visit as much of `R`, relative to other technologies, is tech: software and web companies._ 
+One industry that doesn't visit as many `R` tags on stack overflow, relative to other technologies, is tech. They tend to be more occupied with software and web development languages.
 
 
 [Source: Stack Overflow, impressive growth of R](https://stackoverflow.blog/2017/10/10/impressive-growth-r/)
@@ -443,7 +444,7 @@ gg <- ggplot(anscombe.data, aes(x = x, y = y)) +
 gg + theme_bw()
 ```
 
-[Original Paper PDF: _Graphs in Statistical Analysis"](http://www.sjsu.edu/faculty/gerstman/StatPrimer/anscombe1973.pdf)
+[Original Paper PDF: Graphs in Statistical Analysis](http://www.sjsu.edu/faculty/gerstman/StatPrimer/anscombe1973.pdf)
 
 ```{r, out.width = "400px"}
 path <- paste0(getwd(), "/images/anscombe.png")
@@ -549,19 +550,19 @@ path <- paste0(getwd(), "/images/201309_RandS_timeline.jpg")
 knitr::include_graphics(path)
 ```
 
-## Python: From WebDev to Data Science
+## Python: From WebDev to Data Science {.smaller}
 
 General discussion 
 
-- Created in 1991 by Guido Von Rossum who wanted prettier `ABC` language.
+- Created in 1991 by Guido Von Rossum who wanted prettier `ABC` programming language.
 
-- Mostly a webDev and SysAdmin language until the more recent release of `Pandas`, making the data.frame object available for the very first time. Author Wes McKinney works closely with senior developers in the `R` community who in the spirit of open source, show him the way.
+- Mostly a webDev and SysAdmin language until the comparatively recent release of `Pandas`, making the data.frame object available and sparking a move toward Data Science. Author Wes McKinney works closely with senior developers in the Chicago `R` finance community who in the spirit of open source, show him some important best practices in creating data objects for analysis. However for now, `Pandas` is less performant than `R`'s `data.table` package. [Benchmarks here](https://github.com/Rdatatable/data.table/wiki/Benchmarks-:-Grouping)
 
-- Python is also open source and has a large community of developers who help evolve it faster than any other data analysis software since `R`.
+- Like `R`, Python is also open source and has strength in its large community of developers. It's developers help it catch-up fast and are beginning to make important new contribution to the field of Data Science!
 
-- Leap frogging ahead has left Python without many important graphical analysis tools and statistical/machine learning techniques that are still widely used in Data Analysis.
+- One should know that because Python wasn't created for Data Analysis, at this time, leap frogging into the 21st century has left it without some important graphical, statistical, and machine learning analysis tools and techniques widely used among academic and industry Scientists for analyzing data. 
 
-- A good language for learning general programming principals
+- An excellent language for learning general programming! However, it's emphasis on object oriented programming and software development means one often writes more lines of code then are required with `R` for the same task. 
 
 # R and Data Science in Practice
 
@@ -571,7 +572,7 @@ General discussion
 path <- paste0(getwd(), "/images/DS-Workflow.png")
 knitr::include_graphics(path)
 ```
-**First Mile**: _Import_ data and prepare for Analysis. Hadley Wickham's [_Tidy_ Data:](https://www.jstatsoft.org/article/view/v059i10) Each variable is a column, each observation is a row, and each type of observational unit is a table. Alot of time is spent here.
+**First Mile**: _Import_ data and prepare for Analysis. Hadley Wickham's [_Tidy_ Data:](https://www.jstatsoft.org/article/view/v059i10) Each variable is a column, each observation is a row, and each type of observational unit is a table. Much time is spent here.
 
 **Data Analysis**: _Transform_ data and create new variables with `log`, `exponents`, differencing, etc. _Visualizations_ help spot outliers, remaining data problems, and reveal insights to test with _Models_. Predictive modeling frameworks like [Max Kuhn's `caret`](https://topepo.github.io/caret/index.html) provide tools to quickly iterate over the entire process.
 
