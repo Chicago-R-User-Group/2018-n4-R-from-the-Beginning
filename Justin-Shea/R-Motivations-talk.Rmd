@@ -1,7 +1,7 @@
 ---
 title: "Motivations: R for Data Science"
 author: "Justin M Shea"
-date: "updated `r format(Sys.time(), '%d %B %Y')`"
+date: "updated 15 April 2018"
 output:
   ioslides_presentation:
     widescreen: true
@@ -554,11 +554,11 @@ knitr::include_graphics(path)
 
 General discussion 
 
-- Created in 1991 by Guido Von Rossum who wanted prettier `ABC` programming language.
+- Created in 1991 by Guido Van Rossum who wanted prettier `ABC` programming language.
 
 - Mostly a webDev and SysAdmin language until the comparatively recent release of `Pandas`, making the data.frame object available and sparking a move toward Data Science. Author Wes McKinney works closely with senior developers in the Chicago `R` finance community who in the spirit of open source, show him some important best practices in creating data objects for analysis. However for now, `Pandas` is less performant than `R`'s `data.table` package. [Benchmarks here](https://github.com/Rdatatable/data.table/wiki/Benchmarks-:-Grouping)
 
-- Like `R`, Python is also open source and has strength in its large community of developers. It's developers help it catch-up fast and are beginning to make important new contribution to the field of Data Science!
+- Like `R`, Python is also open source and has strength in its large community of developers. It's developers help it catch-up fast and are beginning to make important new contributions to the field of Data Science!
 
 - One should know that because Python wasn't created for Data Analysis, at this time, leap frogging into the 21st century has left it without some important graphical, statistical, and machine learning analysis tools and techniques widely used among academic and industry Scientists for analyzing data. 
 
@@ -583,7 +583,7 @@ knitr::include_graphics(path)
 
 ## What about 'Big Data' and R? {.smaller .columns-2}
 
-Szilard Pfafka: Physics PhD, chief (data) scientist @Epoch, and (visiting) UNCLA professor.
+Szilard Pfafka: Physics PhD, chief (data) scientist @Epoch, and (visiting) UCLA professor.
 
 He points out that most people's data is just not that big. Less than 10% work with
 data larger than 8 Terabytes.
@@ -605,12 +605,11 @@ R's ability to compute on big data scales with processing power.
 
 Processing power is increasing on the PC and cloud. Amazon AWS and Microsoft Azure provide access to lots of processing power for cheap.
 
-This allows one to develop scripts locally on smaller sample data and then load scripts with
-bigger data into the cloud.
+This allows one to develop scripts locally on smaller sample data and then load scripts with bigger data into the cloud.
 
 [Check out Microsoft Azure and R here](https://azure.microsoft.com/en-us/)
 
-[2017-n1 meetup on useing AWS and R here](https://github.com/Chicago-R-User-Group/2017-n1-Meetup/blob/master/Hultman%2C%20Keith-Setting%20Up%20RStudio%20on%20AWS.pdf)
+[2017-n1 meetup on using AWS and R here](https://github.com/Chicago-R-User-Group/2017-n1-Meetup/blob/master/Hultman%2C%20Keith-Setting%20Up%20RStudio%20on%20AWS.pdf)
 
 
 
@@ -623,18 +622,13 @@ knitr::include_graphics(path)
 [Szilard Pfafka Source: dataset-sizes-kdnuggets](https://github.com/szilard/dataset-sizes-kdnuggets)
 
 
-
-
-
-
 ## How to learn more?
 
 General discussion
 
 - Foundations in Math and Statistics are important
 
-
-- Datacamp.com is excellent for learning how to do specific things and learn the language of R (and Python too for the same money)
+- Datacamp.com is excellent for learning how to traverse the entire Data Science pipeline with R (and Python too for the same money)
 
 - Signup for meetups and go! They are free, keep you current.
 
